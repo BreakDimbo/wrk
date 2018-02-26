@@ -17,16 +17,18 @@ init = function (args)
   authorization = enc(user_name..":"..sign_str)
   method = "POST"
   path = apigtw_host.."?timestamp="..time_stamp.."&app_id="..app_id
-  body = {
-          ["caller"] = 13240345451,
-          ["called"] = 04712110288,
-          ["called_display"] = 04712556365,
-          ["agent_id"] = "99999999991001",
-  }
+  -- body = {
+  --         ["caller"] = 13240345451,
+  --         ["called"] = 04712110288,
+  --         ["called_display"] = 04712556365,
+  --         ["agent_id"] = "99999999991001",
+  -- }
+  body = '{"caller": "13240345451", "called": "04712110288", "called_display": "04712556365", "agent_id": "99999999991001"}'
 end
 
 
 request = function()
    wrk.headers["Authorization"] = "Basic "..authorization
+   wrk.headers["Content-Type"] = "application/json"
    return wrk.format(method, path, nil, body)
 end
