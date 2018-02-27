@@ -11,7 +11,7 @@ init = function (args)
   local user_name = "123456789abcdef"
   local auth_token="a61b82d5497f7a31b5f069c8bade"
   local sign_str = sha1(user_name..auth_token..time_stamp)
-  local app_id = "14118cc8-7d46-4868-567d-e22179bb3408"
+  local app_id = "0aac88e9-ccc3-4f91-76bc-a1f443857aed"
   local apigtw_host = "/cmd/v1/originate"
 
   authorization = enc(user_name..":"..sign_str)
@@ -23,7 +23,7 @@ init = function (args)
   --         ["called_display"] = 04712556365,
   --         ["agent_id"] = "99999999991001",
   -- }
-  body = '{"caller": "13240345451", "called": "04712110288", "called_display": "04712556365", "agent_id": "99999999991001"}'
+  body = '{"caller": "98765432268400", "called": "13240345451", "called_display": "04718888888", "agent_id": "570"}'
 end
 
 
